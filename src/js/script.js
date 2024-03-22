@@ -18,15 +18,8 @@
          * Displays the slide corresponding to the given slide number.
          * @param {number} slideNum - The index of the slide to display.
          */
-        const showSlide = (slideNum) => {
+        const showSlide = () => {
             const slides = document.querySelectorAll(".slide");
-
-            // Handle boundary conditions for slide index
-            if (slideNum > TOTAL_SLIDES) {
-                slideIndex = 1;
-            } else if (slideNum < 1) {
-                slideIndex = TOTAL_SLIDES;
-            }
 
             // Hide all slides
             hideAllSlides(slides);
@@ -60,6 +53,12 @@
          */
         const moveSlide = (moveStep) => {
             slideIndex += moveStep;
+            // Ensure slideIndex wraps around when it reaches the boundaries
+            if (slideIndex > TOTAL_SLIDES) {
+                slideIndex = 1;
+            } else if (slideIndex < 1) {
+                slideIndex = TOTAL_SLIDES;
+            }
             showSlide(slideIndex);
         };
 
