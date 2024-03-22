@@ -8,53 +8,59 @@
         <script src="./src/js/script.js"></script>
     </head>
     <body>
-        <section id="carousel" class="relative w-[100%] mx-auto mb-5">
-            <!-- Slide 1 -->
-            <div class="slide relative">
-                <img
-                    class="w-full h-[600px] object-cover"
-                    src="https://picsum.photos/1280/800?random=1"
-                    alt="This is random"
-                />
-                <div
-                    class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
-                >
-                    Caption Number One
+        <section
+            id="carousel"
+            class="relative w-full mx-auto mb-5 overflow-hidden"
+        >
+            <!-- Slides -->
+            <div class="slides-container">
+                <!-- Slide 1 -->
+                <div class="slide relative">
+                    <img
+                        class="w-full h-[600px] object-cover"
+                        src="https://picsum.photos/1280/800?random=1"
+                        alt="Random Slide 1"
+                    />
+                    <div
+                        class="caption absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+                    >
+                        Caption Number One
+                    </div>
                 </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="slide relative">
-                <img
-                    class="w-full h-[600px] object-cover"
-                    src="https://picsum.photos/1280/800?random=2"
-                    alt="This is random"
-                />
-                <div
-                    class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
-                >
-                    Caption Number Two
+                <!-- Slide 2 -->
+                <div class="slide relative">
+                    <img
+                        class="w-full h-[600px] object-cover"
+                        src="https://picsum.photos/1280/800?random=2"
+                        alt="Random Slide 2"
+                    />
+                    <div
+                        class="caption absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+                    >
+                        Caption Number Two
+                    </div>
                 </div>
-            </div>
 
-            <!-- Slide 3 -->
-            <div class="slide relative">
-                <img
-                    class="w-full h-[600px] object-cover"
-                    src="https://picsum.photos/1280/800?random=3"
-                    alt="This is random"
-                />
-                <div
-                    class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
-                >
-                    Caption Number Three
+                <!-- Slide 3 -->
+                <div class="slide relative">
+                    <img
+                        class="w-full h-[600px] object-cover"
+                        src="https://picsum.photos/1280/800?random=3"
+                        alt="Random Slide 3"
+                    />
+                    <div
+                        class="caption absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+                    >
+                        Caption Number Three
+                    </div>
                 </div>
             </div>
 
             <!-- Previous button -->
             <button
                 id="previous-button"
-                class="absolute left-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
+                class="prev-btn absolute left-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
             >
                 &#x276E;
             </button>
@@ -62,31 +68,28 @@
             <!-- Next button -->
             <button
                 id="next-button"
-                class="absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
+                class="next-btn absolute right-0 top-1/2 p-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white hover:text-amber-500 cursor-pointer"
             >
                 &#x276F;
             </button>
         </section>
 
-        <!-- Carousel pagination -->
+        <!-- Carousel Pagination Dots -->
         <section class="flex justify-center items-center space-x-3">
             <!-- Pagination 1 -->
             <div
-                id="carousel-pagination-1"
                 class="carousel-pagination w-4 h-4 rounded-full cursor-pointer"
                 data-index="1"
             ></div>
 
             <!-- Pagination 2 -->
             <div
-                id="carousel-pagination-2"
                 class="carousel-pagination w-4 h-4 rounded-full cursor-pointer"
                 data-index="2"
             ></div>
 
             <!-- Pagination 3 -->
             <div
-                id="carousel-pagination-3"
                 class="carousel-pagination w-4 h-4 rounded-full cursor-pointer"
                 data-index="3"
             ></div>
