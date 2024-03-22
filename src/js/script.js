@@ -11,6 +11,8 @@
         );
         const TOTAL_SLIDES = document.getElementsByClassName("slide").length;
         let slideIndex = 1;
+        let slideInterval; // Interval for automatic slide transition
+        const slideDelay = 6; // Time in seconds
 
         /**
          * Displays the slide corresponding to the given slide number.
@@ -70,18 +72,44 @@
             showSlide(slideIndex);
         };
 
-        // Event listeners for previous and next buttons
-        previousBtn.addEventListener("click", () => moveSlide(-1));
-        nextBtn.addEventListener("click", () => moveSlide(1));
+        /**
+         * Starts automatic slideshow.
+         */
+        const startSlideShow = () => {
+            slideInterval = setInterval(() => {
+                moveSlide(1);
+            }, slideDelay * 1000);
+        };
 
-        // Event listeners for pagination dots
+        /**
+         * Stops automatic slideshow.
+         */
+        const stopSlideShow = () => {
+            clearInterval(slideInterval);
+        };
+
+        // Event listeners for previous and next buttons
+        previousBtn.addEventListener("click", () => {
+            stopSlideShow(); // Stop slideshow when user interacts with controls
+            moveSlide(-1);
+        });
+        nextBtn.addEventListener("click", () => {
+            stopSlideShow(); // Stop slideshow when user interacts with controls
+            moveSlide(1);
+        });
+
+        // Event listener for pagination dots
         carouselPagination.forEach((dot) => {
-            dot.addEventListener("click", () =>
-                currentSlide(dot.dataset.index)
-            );
+            dot.addEventListener("click", () => {
+                stopSlideShow(); // Stop slideshow when user interacts with controls
+                currentSlide(dot.dataset.index);
+            });
         });
 
         // Initially display the first slide
         showSlide(slideIndex);
+
+        // Start automatic slideshow
+        startSlideShow();
     });
 })();
